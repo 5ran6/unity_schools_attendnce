@@ -7,6 +7,7 @@ class sign_up extends StatelessWidget {
   final focus3 = FocusNode();
   final focus4 = FocusNode();
   final focus5 = FocusNode();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +35,7 @@ class sign_up extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(18.0),
                 child: Card(
+                  //   key: _formKey,
                   elevation: 20,
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -50,6 +52,12 @@ class sign_up extends StatelessWidget {
                           onFieldSubmitted: (v) {
                             FocusScope.of(context).requestFocus(focus1);
                           },
+//                          validator: (value) {
+//                            if (value.isEmpty) {
+//                              return 'Please enter some text';
+//                            }
+//                            return null;
+//                          },
                           textInputAction: TextInputAction.next,
                           autofocus: true,
                           style: TextStyle(color: Colors.black),
@@ -131,7 +139,6 @@ class sign_up extends StatelessWidget {
                         padding: const EdgeInsets.all(18.0),
                         child: TextFormField(
                           textInputAction: TextInputAction.done,
-
                           focusNode: focus5,
                           style: TextStyle(
                             color: Colors.deepPurple[900],
@@ -170,7 +177,13 @@ class sign_up extends StatelessWidget {
                 color: Colors.blue,
                 minWidth: double.infinity,
                 height: 60,
-                onPressed: () {},
+                onPressed: () {
+                  if (_formKey.currentState.validate()) {
+                    // If the form is valid, display a Snackbar.
+                    Scaffold.of(context).showSnackBar(
+                        SnackBar(content: Text('Processing Data')));
+                  }
+                },
                 child: Text(
                   "SIGN UP",
                   style: TextStyle(fontSize: 15, color: Colors.white),

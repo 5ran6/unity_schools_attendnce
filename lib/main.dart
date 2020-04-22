@@ -7,7 +7,7 @@ import 'package:unity_schools_attendnce/sign_up.dart';
 void main() => runApp(MaterialApp(
 
 
-      initialRoute: '/sign_up',
+      initialRoute: '/dashboard',
 
 
       routes: {
