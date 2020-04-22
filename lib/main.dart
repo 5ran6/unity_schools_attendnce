@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:unity_schools_attendnce/dashboard.dart';
+import 'package:unity_schools_attendnce/sign_in.dart';
 import 'package:unity_schools_attendnce/onboarding.dart';
 import 'package:unity_schools_attendnce/sign_up.dart';
 
 void main() => runApp(MaterialApp(
-      //initialRoute: '/onboarding',
+
+
+      initialRoute: '/sign_up',
+
+
       routes: {
-        '/': (context) => sign_up(),
-        '/onboarding': (context) => onboarding(),
+        '/sign_up': (context) => sign_up(),
+        '/sign_in': (context) => sign_in(),
+         '/onboarding': (context) => onboarding(),
+        '/dashboard': (context) => dashboard(),
+
       },
     ));
 
@@ -33,6 +42,9 @@ class MyApp extends StatelessWidget {
   }
 }
 
+void check (){
+  String string = '/onboarding';
+}
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 

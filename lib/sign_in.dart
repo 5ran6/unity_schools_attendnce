@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class fine_login1 extends StatelessWidget {
+class sign_in extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build

@@ -2,7 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class sign_up extends StatelessWidget {
-  final focus = FocusNode();
+  final focus1 = FocusNode();
+  final focus2 = FocusNode();
+  final focus3 = FocusNode();
+  final focus4 = FocusNode();
+  final focus5 = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +48,7 @@ class sign_up extends StatelessWidget {
                         padding: const EdgeInsets.all(18.0),
                         child: TextFormField(
                           onFieldSubmitted: (v) {
-                            FocusScope.of(context).nextFocus();
+                            FocusScope.of(context).requestFocus(focus1);
                           },
                           textInputAction: TextInputAction.next,
                           autofocus: true,
@@ -59,9 +63,9 @@ class sign_up extends StatelessWidget {
                         padding: const EdgeInsets.all(18.0),
                         child: TextFormField(
                           onFieldSubmitted: (v) {
-                            FocusScope.of(context).nextFocus();
+                            FocusScope.of(context).requestFocus(focus2);
                           },
-
+                          focusNode: focus1,
                           textInputAction: TextInputAction.next,
                           style: TextStyle(
                             color: Colors.black,
@@ -77,8 +81,9 @@ class sign_up extends StatelessWidget {
                         child: TextFormField(
                           textInputAction: TextInputAction.next,
                           onFieldSubmitted: (v) {
-                            FocusScope.of(context).nextFocus();
+                            FocusScope.of(context).requestFocus(focus3);
                           },
+                          focusNode: focus2,
                           style: TextStyle(color: Colors.black),
                           decoration: InputDecoration(
                               labelText: 'Email',
@@ -91,9 +96,9 @@ class sign_up extends StatelessWidget {
                         child: TextFormField(
                           textInputAction: TextInputAction.next,
                           onFieldSubmitted: (v) {
-                            FocusScope.of(context).nextFocus();
+                            FocusScope.of(context).requestFocus(focus4);
                           },
-
+                          focusNode: focus3,
                           obscureText: true,
                           style: TextStyle(
                             color: Colors.black,
@@ -109,9 +114,9 @@ class sign_up extends StatelessWidget {
                         child: TextFormField(
                           textInputAction: TextInputAction.next,
                           onFieldSubmitted: (v) {
-                            FocusScope.of(context).nextFocus();
+                            FocusScope.of(context).requestFocus(focus5);
                           },
-
+                          focusNode: focus4,
                           obscureText: true,
                           style: TextStyle(
                             color: Colors.black,
@@ -126,10 +131,8 @@ class sign_up extends StatelessWidget {
                         padding: const EdgeInsets.all(18.0),
                         child: TextFormField(
                           textInputAction: TextInputAction.done,
-                          onFieldSubmitted: (v) {
-                            FocusScope.of(context).nextFocus();
-                          },
 
+                          focusNode: focus5,
                           style: TextStyle(
                             color: Colors.deepPurple[900],
                           ),
