@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:folding_cell/folding_cell.dart';
@@ -171,12 +172,55 @@ class _FancyFabState extends State<FancyFab>
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text("CARD - $index",
-                    style: TextStyle(
-                        color: Color(0xFF2e282a),
-                        fontFamily: 'OpenSans',
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.w800)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CircleAvatar(
+                        backgroundImage: new ExactAssetImage('assets/logo.png'),
+                        backgroundColor: Colors.white70,
+                        radius: 26.0,
+                      ),
+                    ),
+                    VerticalDivider(
+                      thickness: 2,
+                      width: 20,
+                      indent: 20,
+                      endIndent: 20,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "Abraham Udele ",
+                          maxLines: 1,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "FGC Vandekya, Benue ",
+                          maxLines: 1,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w300),
+                        ),
+                        Text(
+                          "Male ",
+                          maxLines: 1,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 10,
+                              fontWeight: FontWeight.w100),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
                 FlatButton(
                   onPressed: () {
                     SimpleFoldingCellState foldingCellState =
@@ -185,7 +229,7 @@ class _FancyFabState extends State<FancyFab>
                     foldingCellState?.toggleFold();
                   },
                   child: Text(
-                    "Open",
+                    "View Details",
                   ),
                   textColor: Colors.white,
                   color: Colors.indigoAccent,
@@ -197,6 +241,10 @@ class _FancyFabState extends State<FancyFab>
     );
   }
 
+  Widget details(
+    i,
+  ) {}
+
   Widget _buildInnerTopWidget(int index) {
     return Container(
         color: Colors.blueGrey[100],
@@ -206,7 +254,9 @@ class _FancyFabState extends State<FancyFab>
                 color: Color(0xFF2e282a),
                 fontFamily: 'OpenSans',
                 fontSize: 20.0,
-                fontWeight: FontWeight.w800)));
+                fontWeight: FontWeight.w800)
+        )
+    );
   }
 
   Widget _buildInnerBottomWidget(int index) {
@@ -214,21 +264,36 @@ class _FancyFabState extends State<FancyFab>
       return Container(
         color: Color(0xFFecf2f9),
         alignment: Alignment.bottomCenter,
-        child: Padding(
-          padding: EdgeInsets.only(bottom: 10),
-          child: FlatButton(
-            onPressed: () {
-              SimpleFoldingCellState foldingCellState = context
-                  .ancestorStateOfType(TypeMatcher<SimpleFoldingCellState>());
-              foldingCellState?.toggleFold();
-            },
-            child: Text(
-              "Close",
-            ),
-            textColor: Colors.white,
-            color: Colors.indigoAccent,
-            splashColor: Colors.white.withOpacity(0.5),
-          ),
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(bottom: 10),
+              child: FlatButton(
+                onPressed: () {},
+                child: Text(
+                  "Other Attendance",
+                ),
+                textColor: Colors.white,
+                color: Colors.indigoAccent,
+                splashColor: Colors.white.withOpacity(0.5),
+              ),
+            ),Padding(
+              padding: EdgeInsets.only(bottom: 10),
+              child: FlatButton(
+                onPressed: () {
+                  SimpleFoldingCellState foldingCellState = context
+                      .ancestorStateOfType(TypeMatcher<SimpleFoldingCellState>());
+                  foldingCellState?.toggleFold();
+                },
+                child: Text(
+                  "Close",
+                ),
+                textColor: Colors.indigoAccent,
+                color: Colors.white,
+                splashColor: Colors.white.withOpacity(0.5),
+              ),
+            )
+          ],
         ),
       );
     });
