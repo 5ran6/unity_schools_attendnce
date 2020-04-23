@@ -22,7 +22,7 @@ class _FancyFabState extends State<FancyFab>
   Animation<double> _translateButton;
   Curve _curve = Curves.easeOut;
   double _fabHeight = 56.0;
-  bool _isVisible = true;
+  bool _isVisible = false;
 
   @override
   initState() {
@@ -71,16 +71,20 @@ class _FancyFabState extends State<FancyFab>
       _animationController.reverse();
     }
     isOpened = !isOpened;
+    _isVisible = !_isVisible;
   }
 
   Widget add() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
-        Text(
-          "Add Child ",
-          style: TextStyle(
-              color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+        Visibility(
+          visible: _isVisible,
+          child: Text(
+            "Add Child ",
+            style: TextStyle(
+                color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+          ),
         ),
         Container(
           child: FloatingActionButton(
@@ -97,10 +101,13 @@ class _FancyFabState extends State<FancyFab>
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
-        Text(
-          "Settings ",
-          style: TextStyle(
-              color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+        Visibility(
+          visible: _isVisible,
+          child: Text(
+            "Settings ",
+            style: TextStyle(
+                color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+          ),
         ),
         Container(
           child: FloatingActionButton(
@@ -117,10 +124,13 @@ class _FancyFabState extends State<FancyFab>
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
-        Text(
-          "Inbox ",
-          style: TextStyle(
-              color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+        Visibility(
+          visible: _isVisible,
+          child: Text(
+            "Inbox ",
+            style: TextStyle(
+                color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+          ),
         ),
         Container(
           child: FloatingActionButton(
