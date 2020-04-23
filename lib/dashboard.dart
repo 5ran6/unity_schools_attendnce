@@ -43,7 +43,10 @@ class dashboard extends StatelessWidget {
                           innerTopWidget: _buildInnerTopWidget(index),
                           innerBottomWidget: _buildInnerBottomWidget(index),
                           cellSize:
-                              Size(MediaQuery.of(context).size.width, 125),
+                          Size(MediaQuery
+                              .of(context)
+                              .size
+                              .width, 125),
                           padding: EdgeInsets.all(15),
                           animationDuration: Duration(milliseconds: 300),
                           borderRadius: 10,
@@ -76,8 +79,8 @@ class dashboard extends StatelessWidget {
                 FlatButton(
                   onPressed: () {
                     SimpleFoldingCellState foldingCellState =
-                        context.ancestorStateOfType(
-                            TypeMatcher<SimpleFoldingCellState>());
+                    context.ancestorStateOfType(
+                        TypeMatcher<SimpleFoldingCellState>());
                     foldingCellState?.toggleFold();
                   },
                   child: Text(
@@ -95,7 +98,7 @@ class dashboard extends StatelessWidget {
 
   Widget _buildInnerTopWidget(int index) {
     return Container(
-        color: Color(0xFFff9234),
+        color: Colors.blueGrey[100],
         alignment: Alignment.center,
         child: Text("TITLE - $index",
             style: TextStyle(
