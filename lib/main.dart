@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:unity_schools_attendnce/dashboad_fab.dart';
 import 'package:unity_schools_attendnce/dashboard.dart';
+import 'package:unity_schools_attendnce/settings.dart';
 import 'package:unity_schools_attendnce/sign_in.dart';
 import 'package:unity_schools_attendnce/onboarding.dart';
 import 'package:unity_schools_attendnce/sign_up.dart';
@@ -8,7 +9,7 @@ import 'package:unity_schools_attendnce/sign_up.dart';
 void main() => runApp(MaterialApp(
 
 
-      initialRoute: '/dashboard_fab',
+      initialRoute: '/settings',
 
 
       routes: {
@@ -17,6 +18,7 @@ void main() => runApp(MaterialApp(
          '/onboarding': (context) => onboarding(),
         '/dashboard': (context) => dashboard(),
         '/dashboard_fab': (context) => FancyFab(),
+        '/settings': (context) => settings(),
 
       },
     ));

@@ -36,7 +36,7 @@ class sign_up extends StatelessWidget {
                 padding: const EdgeInsets.all(18.0),
                 child: Card(
                   //   key: _formKey,
-                  elevation: 20,
+
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
