@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:unity_schools_attendnce/dashboad_fab.dart';
 import 'package:unity_schools_attendnce/dashboard.dart';
+import 'package:unity_schools_attendnce/onboarding.dart';
 import 'package:unity_schools_attendnce/settings.dart';
 import 'package:unity_schools_attendnce/sign_in.dart';
-import 'package:unity_schools_attendnce/onboarding.dart';
 import 'package:unity_schools_attendnce/sign_up.dart';
 
 void main() => runApp(MaterialApp(
-
-
-      initialRoute: '/settings',
-
-
+      initialRoute: '/dashboard_fab',
+      debugShowCheckedModeBanner: false,
       routes: {
         '/sign_up': (context) => sign_up(),
         '/sign_in': (context) => sign_in(),
-         '/onboarding': (context) => onboarding(),
+        '/onboarding': (context) => onboarding(),
         '/dashboard': (context) => dashboard(),
         '/dashboard_fab': (context) => FancyFab(),
         '/settings': (context) => settings(),
-
       },
     ));
 
@@ -46,9 +42,10 @@ class MyApp extends StatelessWidget {
   }
 }
 
-void check (){
+void check() {
   String string = '/onboarding';
 }
+
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 

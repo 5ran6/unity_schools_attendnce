@@ -248,9 +248,7 @@ class _FancyFabState extends State<FancyFab>
     );
   }
 
-  Widget details(
-    i,
-  ) {}
+  Widget details() {}
 
   Widget _buildInnerTopWidget(int index) {
     return Container(
@@ -306,12 +304,58 @@ class _FancyFabState extends State<FancyFab>
     });
   }
 
+  int notificaation_counter = 0;
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
         SystemUiOverlayStyle(statusBarColor: Colors.blue[800]));
     return Scaffold(
       backgroundColor: Colors.grey[100],
+      appBar: AppBar(
+        backgroundColor: Colors.lightBlue[300],
+        elevation: 0,
+        title: Text("Parents Dashboard"),
+        actions: <Widget>[
+          // Using Stack to show Notification Badge
+          new Stack(
+            children: <Widget>[
+              new IconButton(
+                  icon: Icon(Icons.message),
+                  onPressed: () {
+                    setState(() {
+                      notificaation_counter = 0;
+                    });
+                  }),
+              notificaation_counter != 0
+                  ? new Positioned(
+                      right: 11,
+                      top: 11,
+                      child: new Container(
+                        padding: EdgeInsets.all(2),
+                        decoration: new BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        constraints: BoxConstraints(
+                          minWidth: 14,
+                          minHeight: 14,
+                        ),
+                        child: Text(
+                          '$notificaation_counter',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 8,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    )
+                  : new Container()
+            ],
+          ),
+        ],
+      ),
       body: SafeArea(
         child: Column(
           children: <Widget>[
