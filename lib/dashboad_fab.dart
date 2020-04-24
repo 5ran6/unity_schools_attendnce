@@ -274,7 +274,7 @@ class _FancyFabState extends State<FancyFab>
               child: FlatButton(
                 onPressed: () {},
                 child: Text(
-                  "Other Attendance",
+                  "Track Attendance",
                 ),
                 textColor: Colors.white,
                 color: Colors.indigoAccent,
@@ -304,7 +304,7 @@ class _FancyFabState extends State<FancyFab>
     });
   }
 
-  int notificaation_counter = 0;
+  int notificationCounter = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -324,10 +324,10 @@ class _FancyFabState extends State<FancyFab>
                   icon: Icon(Icons.message),
                   onPressed: () {
                     setState(() {
-                      notificaation_counter = 0;
+                      notificationCounter = 0;
                     });
                   }),
-              notificaation_counter != 0
+              notificationCounter != 0
                   ? new Positioned(
                       right: 11,
                       top: 11,
@@ -342,7 +342,7 @@ class _FancyFabState extends State<FancyFab>
                           minHeight: 14,
                         ),
                         child: Text(
-                          '$notificaation_counter',
+                          '$notificationCounter',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 8,
