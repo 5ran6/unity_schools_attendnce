@@ -2,11 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:folding_cell/folding_cell.dart';
+import 'package:unity_schools_attendnce/bottom_sheet.dart';
+
+final bSheet = bottomSheet();
 
 class FancyFab extends StatefulWidget {
   final Function() onPressed;
   final String tooltip;
   final IconData icon;
+
+//  FancyFab(this.bSheet, this.onPressed, this.tooltip, this.icon);
 
   FancyFab({this.onPressed, this.tooltip, this.icon});
 
@@ -89,7 +94,9 @@ class _FancyFabState extends State<FancyFab>
         ),
         Container(
           child: FloatingActionButton(
-            onPressed: null,
+            onPressed: () {
+              bSheet.settingModalBottomSheet(context);
+            },
             tooltip: 'Add',
             child: Icon(Icons.add),
           ),
@@ -254,9 +261,7 @@ class _FancyFabState extends State<FancyFab>
                 color: Color(0xFF2e282a),
                 fontFamily: 'OpenSans',
                 fontSize: 20.0,
-                fontWeight: FontWeight.w800)
-        )
-    );
+                fontWeight: FontWeight.w800)));
   }
 
   Widget _buildInnerBottomWidget(int index) {
@@ -277,12 +282,14 @@ class _FancyFabState extends State<FancyFab>
                 color: Colors.indigoAccent,
                 splashColor: Colors.white.withOpacity(0.5),
               ),
-            ),Padding(
+            ),
+            Padding(
               padding: EdgeInsets.only(bottom: 10),
               child: FlatButton(
                 onPressed: () {
-                  SimpleFoldingCellState foldingCellState = context
-                      .ancestorStateOfType(TypeMatcher<SimpleFoldingCellState>());
+                  SimpleFoldingCellState foldingCellState =
+                      context.ancestorStateOfType(
+                          TypeMatcher<SimpleFoldingCellState>());
                   foldingCellState?.toggleFold();
                 },
                 child: Text(
