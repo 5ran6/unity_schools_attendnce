@@ -254,12 +254,104 @@ class _FancyFabState extends State<FancyFab>
     return Container(
         color: Colors.blueGrey[100],
         alignment: Alignment.center,
-        child: Text("TITLE - $index",
-            style: TextStyle(
-                color: Color(0xFF2e282a),
-                fontFamily: 'OpenSans',
-                fontSize: 20.0,
-                fontWeight: FontWeight.w800)));
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: Container(
+                color: Colors.blueGrey[200],
+
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisSize: MainAxisSize.max,
+                    children: <Widget>[
+                      Text(
+                        "Should be at: ",
+                        maxLines: 1,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Chapel ",
+                        maxLines: 1,
+                        style: TextStyle(
+                            color: Colors.black87,
+                            fontSize: 14,
+                            fontWeight: FontWeight.normal),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ), Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: Container(
+                color: Colors.blueGrey[200],
+
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisSize: MainAxisSize.max,
+                    children: <Widget>[
+                      Text(
+                        "Last checked in at: ",
+                        maxLines: 1,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Chapel ",
+                        maxLines: 1,
+                        style: TextStyle(
+                            color: Colors.black87,
+                            fontSize: 14,
+                            fontWeight: FontWeight.normal),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ), Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: Container(
+                color: Colors.blueGrey[200],
+
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisSize: MainAxisSize.max,
+                    children: <Widget>[
+                      Text(
+                        "Total attendance: ",
+                        maxLines: 1,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "$index",
+                        maxLines: 1,
+                        style: TextStyle(
+                            color: Colors.black87,
+                            fontSize: 14,
+                            fontWeight: FontWeight.normal),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ));
   }
 
   Widget _buildInnerBottomWidget(int index) {
