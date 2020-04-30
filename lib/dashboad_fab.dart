@@ -2,7 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:folding_cell/folding_cell.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:unity_schools_attendnce/bottom_sheet.dart';
+import 'package:unity_schools_attendnce/sign_in.dart';
+import 'package:flutter_styled_toast/flutter_styled_toast.dart';
+
+
 
 final bSheet = bottomSheet();
 
@@ -32,6 +37,7 @@ class _FancyFabState extends State<FancyFab>
 
   @override
   initState() {
+    checkLoginStatus();
     _animationController =
         AnimationController(vsync: this, duration: Duration(milliseconds: 500))
           ..addListener(() {
@@ -62,6 +68,14 @@ class _FancyFabState extends State<FancyFab>
       ),
     ));
     super.initState();
+  }
+
+  checkLoginStatus() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    if (sharedPreferences.get('token') == null) {}
+    Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (BuildContext context) => sign_in()),
+            (Route<dynamic> route) => false);
   }
 
   @override
@@ -260,7 +274,6 @@ class _FancyFabState extends State<FancyFab>
               padding: const EdgeInsets.all(2.0),
               child: Container(
                 color: Colors.blueGrey[200],
-
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
@@ -287,11 +300,11 @@ class _FancyFabState extends State<FancyFab>
                   ),
                 ),
               ),
-            ), Padding(
+            ),
+            Padding(
               padding: const EdgeInsets.all(2.0),
               child: Container(
                 color: Colors.blueGrey[200],
-
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
@@ -318,11 +331,11 @@ class _FancyFabState extends State<FancyFab>
                   ),
                 ),
               ),
-            ), Padding(
+            ),
+            Padding(
               padding: const EdgeInsets.all(2.0),
               child: Container(
                 color: Colors.blueGrey[200],
-
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(

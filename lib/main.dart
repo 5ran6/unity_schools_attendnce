@@ -7,7 +7,7 @@ import 'package:unity_schools_attendnce/sign_in.dart';
 import 'package:unity_schools_attendnce/sign_up.dart';
 
 void main() => runApp(MaterialApp(
-      initialRoute: '/dashboard_fab',
+      initialRoute: '/sign_in',
       debugShowCheckedModeBanner: false,
       routes: {
         '/sign_up': (context) => sign_up(),

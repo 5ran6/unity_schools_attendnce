@@ -202,6 +202,7 @@ class settings extends StatelessWidget {
                           ),
                         ),
                       ),
+
                     ), Container(
                       width: 180,
                       height: 180,

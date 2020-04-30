@@ -61,7 +61,7 @@ class sign_up extends StatelessWidget {
                           textInputAction: TextInputAction.next,
                           autofocus: true,
                           style: TextStyle(color: Colors.black),
-                          decoration: InputDecoration(
+                          keyboardType: TextInputType.text, decoration: InputDecoration(
                               labelText: 'First Name',
                               labelStyle: TextStyle(color: Colors.black54),
                               border: OutlineInputBorder()),
@@ -78,7 +78,7 @@ class sign_up extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.black,
                           ),
-                          decoration: InputDecoration(
+                          keyboardType: TextInputType.text,decoration: InputDecoration(
                               labelText: 'Last Name',
                               labelStyle: TextStyle(color: Colors.black54),
                               border: OutlineInputBorder()),
@@ -93,7 +93,7 @@ class sign_up extends StatelessWidget {
                           },
                           focusNode: focus2,
                           style: TextStyle(color: Colors.black),
-                          decoration: InputDecoration(
+                          keyboardType: TextInputType.emailAddress,  decoration: InputDecoration(
                               labelText: 'Email',
                               labelStyle: TextStyle(color: Colors.black54),
                               border: OutlineInputBorder()),
@@ -111,7 +111,7 @@ class sign_up extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.black,
                           ),
-                          decoration: InputDecoration(
+                         decoration: InputDecoration(
                               labelText: 'Password',
                               labelStyle: TextStyle(color: Colors.black54),
                               border: OutlineInputBorder()),
@@ -120,6 +120,7 @@ class sign_up extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.all(18.0),
                         child: TextFormField(
+
                           textInputAction: TextInputAction.next,
                           onFieldSubmitted: (v) {
                             FocusScope.of(context).requestFocus(focus5);
@@ -129,7 +130,7 @@ class sign_up extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.black,
                           ),
-                          decoration: InputDecoration(
+                           decoration: InputDecoration(
                               labelText: 'Confirm Password',
                               labelStyle: TextStyle(color: Colors.black54),
                               border: OutlineInputBorder()),
@@ -138,12 +139,13 @@ class sign_up extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.all(18.0),
                         child: TextFormField(
+
                           textInputAction: TextInputAction.done,
                           focusNode: focus5,
                           style: TextStyle(
                             color: Colors.deepPurple[900],
                           ),
-                          decoration: InputDecoration(
+                          keyboardType: TextInputType.text,  decoration: InputDecoration(
                               labelText: 'Child Code',
                               labelStyle: TextStyle(color: Colors.black54),
                               border: OutlineInputBorder()),
