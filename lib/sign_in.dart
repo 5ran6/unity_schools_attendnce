@@ -44,6 +44,7 @@ class _sign_inState extends State<sign_in> {
               (Route<dynamic> route) => false);
         });
       } else {
+        jsonData = json.decode(response.body);
         print('failed: ' + response.body);
         if (jsonData['status_code'] == 422) {
           //user not found prompt
