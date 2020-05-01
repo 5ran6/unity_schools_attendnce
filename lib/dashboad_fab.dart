@@ -12,13 +12,11 @@ import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 final bSheet = bottomSheet();
 
 class FancyFab extends StatefulWidget {
-  final Function() onPressed;
-  final String tooltip;
-  final IconData icon;
+//  final Function() onPressed;
+ // final String tooltip;
+//  final IconData icon;
 
 //  FancyFab(this.bSheet, this.onPressed, this.tooltip, this.icon);
-
-  FancyFab({this.onPressed, this.tooltip, this.icon});
 
   @override
   _FancyFabState createState() => _FancyFabState();

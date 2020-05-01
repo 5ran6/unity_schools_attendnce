@@ -24,7 +24,7 @@ class _Check_admission_numberState extends State<Check_admission_number> {
     TextEditingController regNoController = new TextEditingController();
 
     check(String code) async {
-      Map data = {'code': code};
+      Map data = {'code': code.trim()};
 
       var jsonData;
       var response = await http
