@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unity_schools_attendnce/check_admission_number.dart';
 import 'package:unity_schools_attendnce/dashboad_fab.dart';
 import 'package:unity_schools_attendnce/dashboard.dart';
 import 'package:unity_schools_attendnce/onboarding.dart';
@@ -7,7 +8,7 @@ import 'package:unity_schools_attendnce/sign_in.dart';
 import 'package:unity_schools_attendnce/sign_up.dart';
 
 void main() => runApp(MaterialApp(
-      initialRoute: '/sign_in',
+      initialRoute: '/check_admission_number',
       debugShowCheckedModeBanner: false,
       routes: {
         '/sign_up': (context) => sign_up(),
@@ -16,6 +17,7 @@ void main() => runApp(MaterialApp(
         '/dashboard': (context) => dashboard(),
         '/dashboard_fab': (context) => FancyFab(),
         '/settings': (context) => settings(),
+        '/check_admission_number': (context) => Check_admission_number(),
       },
     ));
 

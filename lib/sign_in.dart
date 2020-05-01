@@ -27,7 +27,7 @@ class _sign_inState extends State<sign_in> {
     signIn(String email, String password) async {
       Map data = {'email': email, 'password': password};
 
-      var jsonData = null;
+      var jsonData;
       var response =
           await http.post("https://gamint-bimiis.com.ng/api/login", body: data);
       SharedPreferences sharedPreferences =
@@ -48,7 +48,6 @@ class _sign_inState extends State<sign_in> {
         print('failed: ' + response.body);
         if (jsonData['status_code'] == 422) {
           //user not found prompt
-
           setState(() {
             error = 'User not found.';
             _isLoading = false;
